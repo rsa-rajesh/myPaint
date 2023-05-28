@@ -5,6 +5,7 @@
 * Build Varients
 * App Name
 * Motion Layout
+* Costume Adapter for autocomplete view
 
 # About App
 * This app is designed to learn kotlin migration from java.
