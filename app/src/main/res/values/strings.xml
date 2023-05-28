@@ -1,0 +1,89 @@
+<resources>
+    <string name="skip">Skip</string>
+    <string name="onboard_first_title">Welcome</string>
+    <string name="onboard_first_details">first details</string>
+    <string name="onboard_second_title">second title</string>
+    <string name="onboard_second_details">Second details</string>
+    <string name="onboard_third_title">Third title</string>
+    <string name="onboard_third_details"> third details</string>
+    <string name="read_more">Read more …</string>
+    <string name="app_version" translatable="false">Version: 0.0.1</string>
+    <string-array name="month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string name="loading_app_data">Loading App Data…</string>
+    <string name="subscribe_to_weather" translatable="false">Subscribe To myPaint</string>
+    <string name="log_token" translatable="false">Log Token</string>
+    <string name="msg_subscribed" translatable="false">Subscribe To myPaint topic</string>
+    <string name="msg_token_fmt" translatable="false">FCM registration Token: %s</string>
+    <string name="default_notification_channel_id" translatable="false">mypaint_online</string>
+    <string name="default_notification_channel_name" translatable="false">mypaint_online</string>
+    <string name="msg_subscribe_failed" translatable="false">Failed to subscribe to myPaint topic</string>
+    <string name="fcm_message" translatable="false">FCM Message</string>
+    <string name="select_your_fandeck">Select your fandeck</string>
+    <string name="search_paints">Search Paints</string>
+
+    <string-array name="Gender">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="AgeType">
+        <item>Years</item>
+        <item>Months</item>
+        <item>Days</item>
+    </string-array>
+
+    <string name="next">Next</string>
+    <string name="couldnt_connect_to_server">Couldn\'t connect to server!!!</string>
+    <string name="try_again">Try Again</string>
+    <string name="error">Error</string>
+    <string name="server_error_title">Couldn\'t connect to server!!!</string>
+    <string name="server_error_details">Couldn\'t connect to server!!! \n please try again later</string>
+    <string name="press_back_to_exit">Please click BACK again to exit</string>
+    <string name="loading">loading…</string>
+    <string name="change"><u>change</u></string>
+    <string name="change_language">भाषा परिवर्तन गर्नुहोस्</string>
+
+    <string name="retry">Retry</string>
+    <string name="schedule">Schedule</string>
+    <string name="description">Description</string>
+    <string name="name">Name</string>
+    <string name="current_address">Current Address:</string>
+    <string name="province">Province</string>
+    <string name="district">District</string>
+    <string name="palika">Palika</string>
+    <string name="ward">Ward</string>
+    <string name="age">Age</string>
+    <string name="age_type">Age Type</string>
+    <string name="contact_no">Contact No</string>
+    <string name="gender">Gender</string>
+    <string name="auto_fill">Auto Fill</string>
+    <string name="name_requied">Name is required!</string>
+    <string name="province_required">Province is required!</string>
+    <string name="district_required">District is required!</string>
+    <string name="palika_reqiired">Palika is required!</string>
+    <string name="ward_required">Ward number is required!</string>
+    <string name="age_required">Age is required!</string>
+    <string name="age_type_required">Age type is required!</string>
+    <string name="contact_required">Contact no is required</string>
+    <string name="gender_required">Gender is required</string>
+    <string name="payment_options">Payment options</string>
+    <string name="your_pur_ticket">Your purchased tickets</string>
+    <string name="app_date">Appoin. Date</string>
+    <string name="ok">OK</string>
+    <string name="about_app_html" translatable="false"><![CDATA[<b><font color=#FF0000>MyPaint</font> </b>App is designed to help our<b><i><font color=#FF0000>(Arihant Chemicals pvt. ltd.)</font> </i></b> dealers to generate accurate colors selected by costumers. This App can be used to  <br>• Formulate Colors <br>• View Products<br>• Get color prices <br>• e.t.c.]]></string>
+
+</resources>

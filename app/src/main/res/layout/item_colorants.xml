@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_84sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.yangp.ypwaveview.YPWaveView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/progress"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        app:animatorEnable="true"
+        app:textHidden="true"
+        app:shapeType="circle"
+        app:frontColor="#1f3bed"
+        app:behideColor="#4e99e6"
+        app:borderColor="#ff0000"
+        app:borderWidthSize="1dp"
+        app:textColor="#15DF89"
+        app:max="5"
+        app:progress="3"
+        app:strong="50"
+        app:shapePadding="12dp"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:text="a"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintTop_toBottomOf="@id/progress"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/code"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="a"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/qty"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="a"
+        app:layout_constraintTop_toBottomOf="@id/code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/price"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="a"
+        app:layout_constraintTop_toBottomOf="@id/qty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

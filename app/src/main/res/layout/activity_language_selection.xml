@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.languageSelectionActivity.LanguageSelectionActivity">
+
+
+    <ImageView
+        android:layout_margin="@dimen/_12sdp"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_baseline_arrow"
+        android:id="@+id/ivBack"
+        android:background="@drawable/bg_circle_primary"
+        android:backgroundTint="@color/background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"/>
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:src="@drawable/logo"
+        app:layout_constraintDimensionRatio="2:1.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/background" />
+
+    <LinearLayout
+        android:id="@+id/llLanguageSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="भाषा छनौट गर्नुहोस"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_17sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/_38sdp"
+            android:text="Please select your language"
+            android:textColor="#666666"
+            android:textSize="@dimen/_14sdp"
+            android:visibility="visible" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvEnglish"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginHorizontal="@dimen/_22sdp"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:onClick="englishSelected"
+            app:cardBackgroundColor="@color/background_light"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivEnglish"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/select_english"
+                    app:layout_constraintDimensionRatio="1.2:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+                <TextView
+                    android:id="@+id/tvEnglish"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_16sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:gravity="center_vertical"
+                    android:text="English"
+                    android:textColor="#AF000000"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivEnglish">
+
+
+                </TextView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvNepali"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginHorizontal="@dimen/_22sdp"
+            android:layout_marginTop="@dimen/_9sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:onClick="nepaliSelected"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_16sdp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivNepali"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/select_nepali"
+                    app:layout_constraintDimensionRatio="1.2:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></ImageView>
+
+                <TextView
+                    android:id="@+id/tvNepali"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:gravity="center_vertical"
+                    android:text="नेपाली"
+                    android:textColor="#AF000000"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivNepali">
+
+
+                </TextView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_43sdp"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:backgroundTint="@color/background"
+        android:onClick="confirmClicked"
+        android:text="CONFIRM"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        app:cornerRadius="@dimen/_32sdp"
+        app:layout_constraintBottom_toTopOf="@id/productOf"
+        app:layout_constraintTop_toBottomOf="@id/llLanguageSelect" />
+
+
+    <TextView
+        android:id="@+id/productOf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:gravity="center"
+        android:text=""
+        android:textSize="@dimen/_9sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
