@@ -10,50 +10,14 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 
 interface AuthRepository {
-//    suspend fun getServerDetailsFromServer(
-//        appID: String,
-//        compCode: Int
-//    ): UiState<ServerDetailsResponse>?
-
-//    suspend fun getLocalLevelsFromApi(): UiState<ApiLocalLevelResponse>?
-//    suspend fun saveLocallevel(data: ApiLocalLevelResponse?): CommonResponse?
-//    suspend fun getLocallevelsFromServer(): LocalLevelResponse?
     suspend fun getColorantsFromServer(): UiState<List<TblColorants>>?
     suspend fun getColorsFromServer(): UiState<List<TblColors>>?
-
 }
 
 class AuthRepoImpl(
     private val authApi: AuthApi,
-    private val connection: ConnectionToServer,
     private val dispatcher: CoroutineDispatcher
 ) : AuthRepository {
-
-//    override suspend fun getServerDetailsFromServer(
-//        appID: String,
-//        compCode: Int
-//    ): UiState<ServerDetailsResponse>? {
-//        return withContext(dispatcher) {
-//            doTryCatch {
-//                val basic = Credentials.basic("bts", "Heart@Sun2022")
-//                authApi.getServerDetails(basic, appID = appID, compCode).handleResponse()
-//            }
-//        }
-//    }
-
-//    override suspend fun getLocalLevelsFromApi(): UiState<ApiLocalLevelResponse>? {
-//        return withContext(dispatcher) {
-//            doTryCatch { authApi.getLocalLevelFromApi().handleResponse() }
-//        }
-//    }
-
-//    override suspend fun saveLocallevel(data: ApiLocalLevelResponse?): CommonResponse? {
-//        return connection.saveLocalLevel(data)
-//    }
-//
-//    override suspend fun getLocallevelsFromServer(): LocalLevelResponse? {
-//        return connection.getLocalLevel()
-//    }
 
     override suspend fun getColorantsFromServer(): UiState<List<TblColorants>>? {
         return withContext(dispatcher) {
