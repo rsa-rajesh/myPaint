@@ -51,21 +51,23 @@ class ColorsDropdownAdapterV2(context: Context?, items: List<TblColors>?) :
             return (resultValue as TblColors).shade_name + " (" + resultValue.shad_code + ")"
         }
 
-        override fun performFiltering(constraint: CharSequence): FilterResults {
+        override fun performFiltering(constraint: CharSequence?): FilterResults {
             val results = FilterResults()
             val suggestions: MutableList<TblColors> = ArrayList()
-            if (constraint.isEmpty()) {
-                suggestions.addAll(fullItems)
-            } else {
-                val filterPattern =
-                    constraint.toString().lowercase(Locale.getDefault()).trim { it <= ' ' }
-                for (item in fullItems) {
-                    if (item.shade_name!!.lowercase(Locale.getDefault())
-                            .contains(filterPattern) || item.shad_code!!.lowercase(
-                            Locale.getDefault()
-                        ).contains(filterPattern)
-                    ) {
-                        suggestions.add(item)
+            if (constraint != null) {
+                if (constraint.isEmpty()) {
+                    suggestions.addAll(fullItems)
+                } else {
+                    val filterPattern =
+                        constraint.toString().lowercase(Locale.getDefault()).trim { it <= ' ' }
+                    for (item in fullItems) {
+                        if (item.shade_name!!.lowercase(Locale.getDefault())
+                                .contains(filterPattern) || item.shad_code!!.lowercase(
+                                Locale.getDefault()
+                            ).contains(filterPattern)
+                        ) {
+                            suggestions.add(item)
+                        }
                     }
                 }
             }
@@ -74,7 +76,7 @@ class ColorsDropdownAdapterV2(context: Context?, items: List<TblColors>?) :
             return results
         }
 
-        override fun publishResults(constraint: CharSequence, results: FilterResults) {
+        override fun publishResults(constraint: CharSequence?, results: FilterResults) {
             clear()
             addAll(results.values as List<TblColors>)
             notifyDataSetChanged()

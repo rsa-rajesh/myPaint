@@ -18,7 +18,6 @@ import com.bts.mypaint.data.Prefs
 import com.bts.mypaint.databinding.ActivityColorSelectionBinding
 import com.bts.mypaint.domain.dbmodel.TblColors
 import com.bts.mypaint.ui.HomeViewModel
-import com.bts.mypaint.ui.about.AboutAppActivity
 import com.google.android.material.chip.Chip
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -72,7 +71,7 @@ class ColorSelectionActivity : BaseActivity() {
         binding.tvProduct.text = product
         binding.toolbar.tvToolbarTitle.text = "Color Formulae"
         binding.toolbar.ivBack.setOnClickListener {
-            startActivity(AboutAppActivity.newIntent(this@ColorSelectionActivity))
+            startActivity(FandeckActivity.newIntent(this@ColorSelectionActivity))
             this@ColorSelectionActivity.finish()
         }
         binding.ivImage.load(image)
