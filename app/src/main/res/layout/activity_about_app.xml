@@ -267,9 +267,9 @@
 
                             <ImageView
                                 android:id="@+id/ivDeveloperLogo"
-                                android:layout_width="@dimen/_120sdp"
-                                android:layout_height="@dimen/_60sdp"
-                                android:src="@drawable/bts"
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:src="@drawable/adira_logo"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -281,7 +281,7 @@
                                 android:layout_marginTop="@dimen/_4sdp"
                                 android:layout_marginEnd="@dimen/_12sdp"
                                 android:gravity="center"
-                                android:text="Big Time Soft Pvt. Ltd."
+                                android:text="Adira Tech Pvt. Ltd."
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_16sdp"
                                 android:textStyle="bold"
@@ -295,7 +295,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/_12sdp"
                                 android:gravity="center"
-                                android:text="- \nMobile: - \nOffice: - \nEmail: - \n"
+                                android:text="- \nMobile: 9845180574 ,9767467785 \nOffice: Bharatpur-10, Chitwan \nEmail: admin@adiratech.com \n"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_10sdp"
                                 app:layout_constraintEnd_toStartOf="@id/ivDeveloperLogo"

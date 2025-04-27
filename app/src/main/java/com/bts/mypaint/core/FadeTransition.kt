@@ -43,11 +43,11 @@ class FadeTransition : Transition {
         captureValues(transitionValues)
     }
 
-    override fun createAnimator(sceneRoot: ViewGroup, startValues: TransitionValues, endValues: TransitionValues): Animator {
-        val view = endValues.view
-        if (startAlpha != endAlpha) view.alpha = endAlpha
-        return ObjectAnimator.ofFloat(view, View.ALPHA, startAlpha, endAlpha)
-    }
+//    override fun createAnimator(sceneRoot: ViewGroup, startValues: TransitionValues, endValues: TransitionValues): Animator {
+//        val view = endValues.view
+//        if (startAlpha != endAlpha) view.alpha = endAlpha
+//        return ObjectAnimator.ofFloat(view, View.ALPHA, startAlpha, endAlpha)
+//    }
 
     companion object {
         private const val PROP_NAME_ALPHA = "android:custom:alpha"

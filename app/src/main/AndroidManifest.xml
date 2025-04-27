@@ -14,9 +14,8 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Medicare.NoActionBar"
-        tools:ignore="AllowBackup"
-        tools:replace="android:theme">
+        android:theme="@style/Theme.Mypaint"
+        tools:ignore="AllowBackup">
         <activity
             android:name=".ui.colorGenerate.ColorantsActivity"
             android:exported="false" />
@@ -40,17 +39,14 @@
             android:exported="true" />
         <activity
             android:name=".ui.SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Medicare.OnBoarding">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.OnBoardingActivity"
-            android:theme="@style/Theme.Medicare.OnBoarding" />
+
     </application>
 
 </manifest>

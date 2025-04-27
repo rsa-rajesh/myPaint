@@ -3,14 +3,14 @@ package com.bts.mypaint.ui.colorGenerate
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.inputmethod.InputMethodManager
 import androidcommon.RDrawable
 import androidcommon.base.BaseActivity
 import androidcommon.extension.showErrorDialog
 import androidcommon.extension.toastS
 import androidcommon.utils.UiState
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bts.mypaint.adapters.FandeckListAdapter
@@ -35,6 +35,7 @@ class FandeckActivity : BaseActivity() {
     private lateinit var fandeckListAdapter: FandeckListAdapter
     private lateinit var productListAdapter: ProductListAdapter
     var menuVisible = false
+
     companion object {
         fun newIntent(context: Context): Intent {
             return Intent(context, FandeckActivity::class.java).apply {
@@ -44,19 +45,27 @@ class FandeckActivity : BaseActivity() {
             }
         }
     }
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         homeViewModel.getFandecks()
         observeData()
 
-        binding.ivManu.setOnClickListener {
+        binding.root.setOnClickListener {
+            binding.constraintLayout.transitionToStart()
+            menuVisible = false
+        }
 
+        binding.ivManu.setOnClickListener {
             menuVisible = if (menuVisible) {
                 binding.constraintLayout.transitionToStart()
+                menuVisible = false
                 false
             } else {
                 binding.constraintLayout.transitionToEnd()
+                menuVisible = true
                 true
             }
         }
@@ -71,6 +80,7 @@ class FandeckActivity : BaseActivity() {
             homeViewModel.getColorantsFromServer()
         }
     }
+
     private fun serverDetailsObserver() {
         homeViewModel.colorantsFromServer.observe(this) {
             it ?: return@observe
@@ -144,7 +154,7 @@ class FandeckActivity : BaseActivity() {
                                 title = "Success",
                                 message = "Successfully updated all colors and colorants",
                                 label = "Ok",
-                                )
+                            )
                         }
 
                     }
@@ -171,9 +181,11 @@ class FandeckActivity : BaseActivity() {
             }
         }
     }
+
     private fun retryClicked() {
         homeViewModel.getColorantsFromServer()
     }
+
     private fun observeData() {
         homeViewModel.fandecksList.observe(this) {
             it ?: return@observe
@@ -181,7 +193,8 @@ class FandeckActivity : BaseActivity() {
                 fandeckListAdapter = FandeckListAdapter(onItemClick = { card ->
                     homeViewModel.getProducts(card.card_name)
                     observeData()
-
+                    binding.constraintLayout.transitionToStart()
+                    menuVisible = false
                 }, pref = prefs)
                 fandeckListAdapter.items = it
                 binding.rvFandeck.layoutManager =
@@ -204,7 +217,8 @@ class FandeckActivity : BaseActivity() {
                             }
                         }
                     })
-
+                    binding.constraintLayout.transitionToStart()
+                    menuVisible = false
                 }, pref = prefs)
                 productListAdapter.items = it
                 binding.rvProducts.layoutManager =
@@ -213,17 +227,5 @@ class FandeckActivity : BaseActivity() {
             }
         }
 
-    }
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-
-        if (menuVisible){
-            menuVisible=false
-            binding.constraintLayout.transitionToStart()
-        }
-        if (currentFocus != null) {
-            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
-        }
-        return super.dispatchTouchEvent(ev)
     }
 }

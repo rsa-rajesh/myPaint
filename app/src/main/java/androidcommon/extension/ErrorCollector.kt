@@ -10,7 +10,7 @@ val chuckerCollector by lazy {
 
 fun Throwable.logException(showInNotification: Boolean = true, tag: String = "EXCEPTION_TRACKER") {
     if (showInNotification) {
-        chuckerCollector.onError(tag, this)
+//        chuckerCollector.onError(tag, this)
     }
     printStackTrace()
 }
